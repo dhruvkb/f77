@@ -12,7 +12,6 @@ c     - margin: the least significant difference between two iterations
        real prevmid, mid, fmid, ll, fll, ul, ful
        logical first, found
 
-       write(*, *) "Solving by bisection method"
 c       write(*, *) ll, ul, maxiter, margin
 
        ll = lowerlimit
@@ -49,7 +48,7 @@ c       write(*, *) ll, ul, maxiter, margin
        if (found .eqv. .TRUE.) then
         bisection = mid
        else
-        write(*, *) "Could not find a solution"
+        write(*, *) 'Could not find a solution'
         bisection = -1.0
        end if
 
@@ -69,7 +68,6 @@ c     - margin: the least significant difference between two iterations
        real prevx, x
        logical first, found
 
-       write(*, *) "Solving by iteration method"
 c       write(*, *) start, maxiter, margin
 
        x = start
@@ -93,7 +91,7 @@ c       write(*, *) start, maxiter, margin
        if (found .eqv. .TRUE.) then
         iteration = x       
        else
-        write(*, *) "Could not find a solution"
+        write(*, *) 'Could not find a solution'
         iteration = -1.0
        end if
 
@@ -114,7 +112,6 @@ c     - margin: the least significant difference between two iterations
        real prevx, x, fx, dfx
        logical first, found
        
-       write(*, *) "Solving by Newton-Raphson method"
 c       write(*, *) start, maxiter, margin
 
        x = start
@@ -139,7 +136,7 @@ c       write(*, *) start, maxiter, margin
        if (found .eqv. .TRUE.) then
         newtonraphson = x
        else
-        write(*, *) "Could not find a solution"
+        write(*, *) 'Could not find a solution'
         newtonraphson = -1.0
        end if
 

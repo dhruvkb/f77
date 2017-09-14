@@ -9,15 +9,18 @@ c     Call the methods from methods.f as a demonstration
        pi = 4.0*atan(1.0)
 
 1      format(' ', f11.5)
-       
+
+       write(*, *) 'Solving by Simpson method'       
        integral = simpson(cw240817, 0.0, 4.0, 300)
        write(*, 1) integral
        
+       write(*, *) 'Solving by Gauss quadrature'
        filename = 'gauss8.data'
        rows = linecount(filename)
        integral = gauss(cw310817_1, 1.0, 4.0, filename, rows)
        write(*, 1) integral
        
+       write(*, *) 'Solving by Gauss quadrature'
        filename = 'gauss16.data'
        rows = linecount(filename)
        integral = gauss(cw310817_2, 0.0, pi/4.0, filename, rows)

@@ -7,16 +7,19 @@ c     Call the methods from methods.f as a demonstration
 
 1      format(' ', f11.5)
 
+       write(*, *) 'Solving by Lagrange interpolation'
        filename = 'lagrange.data'
        rows = linecount(filename)
        y = lagrange(filename, rows, 0.0)
        write(*, 1) y
 
+       write(*, *) 'Solving by Hermite interpolation'
        filename = 'hermite.data'
        rows = linecount(filename)
        y = hermite(filename, rows, 2.7)
        write(*, 1) y
 
+       write(*, *) 'Fitting by linear least-square method'
        filename = 'cw170817-2.data'
        rows = linecount(filename)
        s = leastsquare(filename, rows, ln, asitis, epow)

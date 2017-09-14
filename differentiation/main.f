@@ -8,27 +8,29 @@ c     Call the methods from methods.f as a demonstration
        
 1      format(' ', f11.5)
 
-       write(*, *) "Solving by backward derivative"
+       write(*, *) 'Solving by backward derivative'
        derivative = backwarddf(xsquare, 1.0, 1.0e-6)
        write(*, 1) derivative
 
-       write(*, *) "Solving by central derivative"
+       write(*, *) 'Solving by central derivative'
        derivative = centraldf(xsquare, 1.0, 1.0e-6)
        write(*, 1) derivative
 
-       write(*, *) "Solving by forward derivative"
+       write(*, *) 'Solving by forward derivative'
        derivative = forwarddf(xsquare, 1.0, 1.0e-6)
        write(*, 1) derivative
 
-       write(*, *) "Solving by Richardson method"
+       write(*, *) 'Solving by Richardson method'
        derivative = forwarddf(xsquare, 1.0, 1.0e-6)
        write(*, 1) derivative
        
+       write(*, *) 'Solving by interpolation-differentiation method'
        infn = 'interpoldiff.data'
        outfn = 'derivatives.data'
        rows = linecount(infn)
        result = interpoldiff(infn, outfn, rows, 1.0e-3)
-       
+       write(*, *) 'Result written to ', outfn
+
        stop
       end
 

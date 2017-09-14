@@ -11,7 +11,6 @@ c     - n: the number of steps to divide the range into
        
        real h, total
 
-       write(*, *) "Solving by Simpson's rule"
 c       write(*, *) a, b, n
        
        h = (b - a)/n
@@ -46,7 +45,6 @@ c     - rows: the number of points and corresponding weights in the file
        
        real w, x, m, c, total
        
-       write(*, *) "Solving by Gauss' quadrature"
 c       write(*, *) datafile, rows
        
        m = (b - a)/2.0

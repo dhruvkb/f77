@@ -14,7 +14,6 @@ c     - x: the value where the function is to be approximated
        
        lagrange = 0.0
 
-       write(*, *) "Solving by Lagrange interpolation"
 c       write(*, *) datafile, rows, x
 
        open(unit=4, file=datafile, status='unknown')
@@ -65,7 +64,6 @@ c     - x: the value where the function is to be approximated
 
        hermite = 0.0
 
-       write(*, *) "Solving by Hermite interpolation"
 c       write(*, *) datafile, rows, x
 
        open(unit=4, file=datafile, status='unknown')
@@ -119,8 +117,7 @@ c     - icop: the inverse operation to perform on determined c
        
        real xi, yi, sxi, syi, sxiyi, sxixi, m, c
        dimension xi(rows), yi(rows)
-       
-       write(*, *) "Solving by least-square interpolation"
+
 c       write(*, *) datafile, rows, x
        
        open(unit=4, file=datafile, status='unknown')

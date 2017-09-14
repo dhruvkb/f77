@@ -66,8 +66,6 @@ c     - h: the small difference for calculating the derivative
        
        real x, xph, xmh, y, yxph, yxmh, dy, lagrange
        
-       write(*, *) "Solving by interpolation differentiation method"
-
        open(unit=7, file=indatafile, status='unknown')
        open(unit=8, file=outdatafile, status='unknown')
 1      format(' ', f11.5, ' ', f11.5)
