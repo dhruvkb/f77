@@ -1,0 +1,13 @@
+PHN311
+=======
+
+This directory contains all programs made for the course PHN311
+
+The programs are organized by topic
+ - solution: Finding one root of a given function
+ - interpolation: Finding value a point, given values at other points
+ - integration: Finding the definite integral of a function
+ - differentiation: Finding the derivative of a function or points
+ - diff-eq: Solving first and second order differential equations
+
+ - dependencies: Simple helper functions
