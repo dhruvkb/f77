@@ -45,7 +45,7 @@ c     - y: the operand
        return
       end         
 
-c     Return the value of Euler's number raised to the operand
+c     Returns the value of Euler's number raised to the operand
 c
 c     Params:
 c     - y: the operand
