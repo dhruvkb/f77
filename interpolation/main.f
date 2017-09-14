@@ -1,4 +1,4 @@
-c     Call the methods from methods.f as a demonstation
+c     Call the methods from methods.f as a demonstration
       program main
        real lagrange, hermite, y
        integer rows, linecount
