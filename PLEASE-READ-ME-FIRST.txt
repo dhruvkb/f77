@@ -8,6 +8,6 @@ The programs are organized by topic
  - interpolation: Finding value a point, given values at other points
  - integration: Finding the definite integral of a function
  - differentiation: Finding the derivative of a function or points
- - diff-eq: Solving first and second order differential equations
+ - diffeq: Solving first and second order differential equations
 
  - dependencies: Simple helper functions
