@@ -11,15 +11,15 @@ c     Calls the various methods of finding the root(s) of f(x)=0
 1      format(' ', f10.5)
 
        write(*, *) 'Solving by bisection method'       
-       soln = bisection(f, 0.0, 1.0, 100, 1e-7)
+       soln = bisection(f, 0.0, 1.0, 100, 1.0e-7)
        write(*, 1) soln
 
        write(*, *) 'Solving by iteration method'
-       soln = iteration(phi, 0.75, 100, 1e-7)
+       soln = iteration(phi, 0.75, 100, 1.0e-7)
        write(*, 1) soln
 
        write(*, *) 'Solving by Newton-Raphson method'
-       soln = newtonraphson(f, 0.5, 100, 1e-7)
+       soln = newtonraphson(f, 0.5, 100, 1.0e-7)
        write(*, 1) soln
 
        stop
