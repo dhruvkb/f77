@@ -1,8 +1,13 @@
+c     Uses functions from
+c     - methods.f
+c     - dependencies.f
+
 c     Call the methods from methods.f as a demonstration
       program main
        real lagrange, hermite, y
        integer rows, linecount
-       character*31 filename, leastsquare, s
+       character*31 filename
+       character*63 leastsquare, s
        external asitis, ln, epow
 
 1      format(' ', f11.5)
@@ -20,9 +25,9 @@ c     Call the methods from methods.f as a demonstration
        write(*, 1) y
 
        write(*, *) 'Fitting by linear least-square method'
-       filename = 'cw170817-2.data'
+       filename = 'leastsquare.data'
        rows = linecount(filename)
-       s = leastsquare(filename, rows, ln, asitis, epow)
+       s = leastsquare(filename, rows, asitis, ln, asitis, epow)
        write(*, *) s
 
        stop

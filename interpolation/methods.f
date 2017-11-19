@@ -107,12 +107,14 @@ c
 c     Params:
 c     - datafile: the name of the file containging tabular data
 c     - rows: the number of rows in that datafile
+c     - xop: the operation to be performed on every tabulated value of x
 c     - yop: the operation to be performed on every tabulated value of y
 c     - imop: the inverse operation to perform on determined m
 c     - icop: the inverse operation to perform on determined c
-      function leastsquare(datafile, rows, yop, imop, icop)
-       real yop, imop, icop
-       character*31 datafile, leastsquare
+      function leastsquare(datafile, rows, xop, yop, imop, icop)
+       real xop, yop, imop, icop
+       character*31 datafile
+       character*63 leastsquare
        integer rows
        
        real xi, yi, sxi, syi, sxiyi, sxixi, m, c
@@ -129,6 +131,7 @@ c       write(*, *) datafile, rows, x
        sxixi = 0.0
        do i = 1, rows
         read(4, 31) xi(i), yi(i)
+        xi(i) = xop(xi(i))
         yi(i) = yop(yi(i))
 c        write(*, 31) xi(i), yi(i)
 
@@ -144,7 +147,7 @@ c        write(*, 31) xi(i), yi(i)
        c = (sxi*sxiyi - sxixi*syi) / (sxi*sxi - rows*sxixi)
        c = icop(c)
 
-32     format(' ', 'm = ', f11.5, ' & c = ', f11.5)       
+32     format(' ', 'imop(m) = ', f11.5, ' & icop(c) = ', f11.5)       
        write(leastsquare, 32) m, c
        return
       end
