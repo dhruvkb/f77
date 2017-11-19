@@ -82,6 +82,8 @@ c        write(*, 1) x, y
         
         write(8, 1) x, dy
        end do
+       close(unit=8)
+       close(unit=7)
        
        interpoldiff = 1
        return
